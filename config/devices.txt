@@ -1,0 +1,9 @@
+# Read once, when the device list in the database is empty (first start).
+# After that, devices are managed on the Devices page.
+# One device per line:   name | IP | port | comm key | off   ("off" = not polled)
+Camp/WH | 192.168.5.48 | 4370 | 1234
+NR      | 192.168.5.49 | 4370 | 1234
+SR      | 192.168.5.50 | 4370 | 1234
+NS/WS   | 192.168.5.53 | 4370 | 1234
+IT      | 192.168.5.51 | 4370 | 1234 | off
+OFFICES | 192.168.5.52 | 4370 | 1234 | off

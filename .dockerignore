@@ -1,0 +1,11 @@
+data
+config
+scripts
+import
+tools
+.git
+*.md
+**/__pycache__
+web/node_modules
+web/dist
+*.zip

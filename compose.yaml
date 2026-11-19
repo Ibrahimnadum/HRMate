@@ -1,0 +1,22 @@
+# Iratec Attendance on the Synology NAS (Container Manager).  Web: http://192.168.5.18:8090
+# Work hours, Activity Board windows, devices and accounts are managed in the web pages.
+services:
+  att:
+    build: .
+    image: iratec-attendance
+    container_name: attendance
+    restart: unless-stopped
+    ports:
+      - "8090:8000"
+    environment:
+      TZ: Asia/Baghdad
+      PULL_MINUTES: "10"     # log pull interval (outside board windows)
+      CHECK_SECONDS: "60"    # port 4370 check interval
+      BACKUP_HOUR: "4"       # nightly backup to data/backups (30 kept)
+    volumes:
+      - ./data:/data          # database, backups, import files; never touched by deploys
+      - ./config:/config:ro   # devices.txt, read once to fill an empty device list
+    mem_limit: 384m
+    logging:
+      driver: json-file
+      options: { max-size: "5m", max-file: "3" }

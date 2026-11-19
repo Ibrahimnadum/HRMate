@@ -1,0 +1,9 @@
+data/*
+!data/.keep
+import/
+__pycache__/
+*.pyc
+web/node_modules/
+web/dist/
+*.zip
+*.tsbuildinfo
